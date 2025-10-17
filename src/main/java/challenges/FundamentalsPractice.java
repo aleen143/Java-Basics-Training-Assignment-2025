@@ -28,36 +28,28 @@ public class FundamentalsPractice {
      */
     public static int[] fizzbuzz(int[] arr) {
 
-        int[] fizzBuzzes = new int[3];
-
-        int fizzTotal = 0;
-        int buzzTotal = 0;
-        int fizzBuzzTotal = 0;
+        int[] fizzBuzzes = {0, 0, 0};
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 3 == 0 && arr[i] % 5 == 0) {
                 System.out.println("FizzBuzz");
-                fizzBuzzTotal++;
+                fizzBuzzes[2]++;
             }
 
             else if (arr[i] % 3 == 0) {
                 System.out.println("Fizz");
-                fizzTotal++;
+                fizzBuzzes[0]++;
             }
 
             else if (arr[i] % 5 == 0) {
                 System.out.println("Buzz");
-                buzzTotal++;
+                fizzBuzzes[1]++;
             }
 
             else {
                 System.out.println(arr[i]);
             }
         }
-
-        fizzBuzzes[0] = fizzTotal;
-        fizzBuzzes[1] = buzzTotal;
-        fizzBuzzes[2] = fizzBuzzTotal;
         
         return fizzBuzzes;
     }
