@@ -7,6 +7,8 @@ package challenges;
 
 import java.util.*;
 
+import javax.swing.event.SwingPropertyChangeSupport;
+
 public class FundamentalsPractice {
 
     // Example: sum of two integers
@@ -25,7 +27,39 @@ public class FundamentalsPractice {
      * Ex: Given [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15], you would RETURN: [3, 2, 1]
      */
     public static int[] fizzbuzz(int[] arr) {
-        return null;
+
+        int[] fizzBuzzes = new int[3];
+
+        int fizzTotal = 0;
+        int buzzTotal = 0;
+        int fizzBuzzTotal = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 == 0 && arr[i] % 5 == 0) {
+                System.out.println("FizzBuzz");
+                fizzBuzzTotal++;
+            }
+
+            else if (arr[i] % 3 == 0) {
+                System.out.println("Fizz");
+                fizzTotal++;
+            }
+
+            else if (arr[i] % 5 == 0) {
+                System.out.println("Buzz");
+                buzzTotal++;
+            }
+
+            else {
+                System.out.println(arr[i]);
+            }
+        }
+
+        fizzBuzzes[0] = fizzTotal;
+        fizzBuzzes[1] = buzzTotal;
+        fizzBuzzes[2] = fizzBuzzTotal;
+        
+        return fizzBuzzes;
     }
 
     /**
