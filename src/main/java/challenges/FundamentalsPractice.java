@@ -65,8 +65,14 @@ public class FundamentalsPractice {
      * char[] charArray = str.toCharArray(); // charArray is ['h', 'e', 'l', 'l', 'o']
      */
     public static String reverseString(String input) {
-        // Your code goes here
-        return null;
+        char[] charArray = input.toCharArray();
+        char[] reversedChar = new char[charArray.length];
+
+        for (int i = charArray.length - 1; i >= 0; i--) {
+            reversedChar[charArray.length - i - 1] = charArray[i];
+        }
+
+        return new String(reversedChar);
     }
 
     /**
