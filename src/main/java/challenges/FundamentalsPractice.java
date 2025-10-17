@@ -104,8 +104,14 @@ public class FundamentalsPractice {
      * - strings can be accessed like this: variable.charAt(0) returns the first character
      */
     public static int countVowels(String input) {
-        // Your code goes here
-        return 0;
+        int vowels = 0;
+
+        for (char i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == 'a' || input.charAt(i) == 'e' || input.charAt(i) == 'i' || input.charAt(i) == 'o' || input.charAt(i) =='u') {
+                vowels++;
+            }
+        }
+        return vowels;
     }
 
     /**
