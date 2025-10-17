@@ -80,8 +80,14 @@ public class FundamentalsPractice {
      * Ex: [1, 5, 3, 9, 2] -> 9
      */
     public static int maxInArray(int[] arr) {
-        // Your code goes here
-        return 0;
+        int biggest = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > biggest) {
+                biggest = arr[i];
+            }
+        }
+        return biggest;
     }
 
     public static boolean stringsAreSame(String a, String b) {
