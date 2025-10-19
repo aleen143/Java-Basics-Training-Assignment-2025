@@ -123,7 +123,7 @@ public class FundamentalsPractice {
         if (n == 1) {
             return false;
         }
-        
+
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
                 return false;
@@ -142,8 +142,12 @@ public class FundamentalsPractice {
      * THIS ONE IS HARD
      */
     public static long factorial(int n) {
-        // Your code goes here
-        return 0L;
+        int previousFactorial = 1;
+        
+        for (int i = n; i > 0; i--) {
+            previousFactorial = previousFactorial * i;
+        }
+        return previousFactorial;
     }
 
     
