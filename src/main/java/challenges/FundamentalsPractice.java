@@ -120,8 +120,18 @@ public class FundamentalsPractice {
      * Hint: to check if n is prime, divide it by all integers from 2 to sqrt(n).
      */
     public static boolean isPrime(int n) {
-        // Your code goes here
-        return false;
+        if (n == 1) {
+            return false;
+        }
+        
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+        
     }
 
     /**
