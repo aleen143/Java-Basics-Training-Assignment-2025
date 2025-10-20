@@ -94,7 +94,8 @@ public class FundamentalsPractice {
         // If strings are equal, return true. Else, return false
         // Hint: use .equals() to compare strings not ==
         // Do not care about capitals HI is equal to hi look up how to do.
-        return false;
+        
+            return a.equalsIgnoreCase(b);
     }
 
     /**
@@ -171,6 +172,11 @@ public class FundamentalsPractice {
         // maxInArray
         int[] nums = {1, 5, 3, 9, 2};
         System.out.println("maxInArray([1,5,3,9,2]) = " + maxInArray(nums)); // Expected: 9
+
+        // stringsAreSame
+        String one = "hello";
+        String two = "HELLO";
+        System.out.println("stringAreSame = " + stringsAreSame(one, two));
 
         // countVowels
         String word = "banana";
