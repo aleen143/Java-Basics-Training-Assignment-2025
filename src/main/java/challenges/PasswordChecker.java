@@ -1,4 +1,5 @@
 package challenges;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -36,6 +37,12 @@ public class PasswordChecker {
         // TODO: Output the strength rating
         // System.out.println(strength);
 
+        System.out.println("enter your password: ");
+        String password = scanner.nextLine();
+
+        String strength = checkPasswordStrength(password);
+        System.out.println(strength);
+
         scanner.close();
     }
 
@@ -52,6 +59,62 @@ public class PasswordChecker {
         // - Check for uppercase, lowercase, digit, and symbol
         // - Return the appropriate rating
 
-        return ""; // Placeholder
+        if (password.length() < 8) {
+            return "Weak";
+        }
+
+        int types = 0;
+
+        ArrayList<Character> upperCase = new ArrayList<>();
+        ArrayList<Character> lowerCase = new ArrayList<>();
+        ArrayList<Character> digit = new ArrayList<>();
+        ArrayList<Character> symbol = new ArrayList<>();
+
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                upperCase.add(c);
+            }
+
+            else if (Character.isLowerCase(c)) {
+                lowerCase.add(c);
+            }
+
+            else if (Character.isDigit(c)) {
+                digit.add(c);
+            }
+
+            else {
+                symbol.add(c);
+            }
+        }
+
+        if (upperCase.size() > 0) {
+            types++;
+        }
+
+        if (lowerCase.size() > 0) {
+            types++;
+        }
+
+        if (digit.size() > 0) {
+            types++;
+        }
+        
+        if (symbol.size() > 0) {
+            types++;
+        }
+
+        if (types == 4) {
+            return "Strong";
+        }
+
+        else if (types == 3) {
+            return "Moderate";
+        }
+
+        else {
+            return "Weak";
+        }
+
     }
 }
